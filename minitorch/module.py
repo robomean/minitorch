@@ -51,7 +51,7 @@ class Module:
         p: Dict[str, Parameter] = self.__dict__["_parameters"]
         for module_name, module in self.__dict__["_modules"].items():
             for param in module.named_parameters():
-                p[f'{module_name}.{param[0]}'] = param[1]
+                p[f"{module_name}.{param[0]}"] = param[1]
 
         return [(name, param) for name, param in p.items()]
 

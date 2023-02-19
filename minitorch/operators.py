@@ -99,7 +99,7 @@ def inv(x: float) -> float:
 
 def inv_back(x: float, d: float) -> float:
     r"If $f(x) = 1/x$ compute $d \times f'(x)$"
-    return -d / x ** 2
+    return -d / x**2
 
 
 def relu_back(x: float, d: float) -> float:
@@ -125,6 +125,7 @@ def map(fn: Callable[[float], float]) -> Callable[[Iterable[float]], Iterable[fl
          A function that takes a list, applies `fn` to each element, and returns a
          new list
     """
+
     def apply(ls: Iterable[float]):
         ret = []
         for x in ls:
@@ -155,6 +156,7 @@ def zipWith(
          applying fn(x, y) on each pair of elements.
 
     """
+
     def apply(ls1: Iterable[float], ls2: Iterable[float]):
         ret = []
         for x, y in zip(ls1, ls2):
@@ -184,6 +186,7 @@ def reduce(
          $x_1 \ldots x_n$ and computes the reduction :math:`fn(x_3, fn(x_2,
          fn(x_1, x_0)))`
     """
+
     def apply(ls: Iterable[float]):
         ret = start
         for x in ls:
